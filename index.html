@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mammals</title>
+<style>
+.gift-box {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px #999;
+    position: relative;
+}
+
+.gift-box:hover {
+    background-color: #ff1493;
+}
+
+.gift-box:active {
+    background-color: #ff1493;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.gift-box::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.gift-box:hover::after,
+.gift-box:focus::after {
+    display: block;
+}
+
+.info {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #da1919; /* Add background color to the gallery */
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.gallery-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-image::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.gallery-image:hover::after,
+.gallery-image:focus::after {
+    display: block;
+}
+.map {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    background-image: url('MammalsModule/Screen%20Shot%202025-02-17%20at%207.38.13%20PM.png'); /* Replace with the path to your background image */
+    background-size: cover;
+    background-position: center;
+        }
+
+.map::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); /* 60% opacity */
+            z-index: 1;
+        }
+
+.stop {
+    position: absolute;
+    z-index: 2; /* Ensure the content is above the overlay */
+    background: rgba(101, 97, 97, 0.8); /* Optional: Add background to make text more readable */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.question {
+    display: none;
+    background-color: rgba(105, 66, 66, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stop:hover .question {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <h1>All About Mammals</h1>
+    <p>Mammalia is a class of animal within the phylum Chordata. Mammal classification has been through several iterations since Carl Linnaeus initially defined the class. No classification system is universally accepted; McKenna & Bell (1997) and Wilson & Reader (2005) provide useful recent compendiums.[1] Many earlier ideas from Linnaeus et al. have been completely abandoned by modern taxonomists, among these are the idea that bats are related to birds or that humans represent a group outside of other living things.[2] Competing ideas about the relationships of mammal orders do persist and are currently in development. Most significantly in recent years, cladistic thinking has led to an effort to ensure that all taxonomic designations represent monophyletic groups. The field has also seen a recent surge in interest and modification due to the results of molecular phylogenetics. Systematics is the study of the diversification of living forms, both past and present, and the relationships among living things through time. Relationships are visualized as evolutionary trees (synonyms: phylogenetic trees, phylogenies). Phylogenies have two components: branching order (showing group relationships, graphically represented in cladograms) and branch length (showing amount of evolution). Phylogenetic trees of species and higher taxa are used to study the evolution of traits (e.g., anatomical or molecular characteristics) and the distribution of organisms (biogeography). Systematics, in other words, is used to understand the evolutionary history of life on Earth.</p>
+    <p>In the study of biological systematics, researchers use the different branches to further understand the relationships between differing organisms. These branches are used to determine the applications and uses for modern day systematics.[citation needed]
+
+        Biological systematics classifies species by using three specific branches. Numerical systematics, or biometry, uses biological statistics to identify and classify animals. Biochemical systematics classifies and identifies animals based on the analysis of the material that makes up the living part of a cell—such as the nucleus, organelles, and cytoplasm. Experimental systematics identifies and classifies animals based on the evolutionary units that comprise a species, as well as their importance in evolution itself. Factors such as mutations, genetic divergence, and hybridization all are considered evolutionary units.[1]
+        
+        With the specific branches, researchers are able to determine the applications and uses for modern-day systematics. These applications include:
+        
+        Studying the diversity of organisms and the differentiation between extinct and living creatures. Biologists study the well-understood relationships by making many different diagrams and "trees" (cladograms, phylogenetic trees, phylogenies, etc.).
+        Including the scientific names of organisms, species descriptions and overviews, taxonomic orders, and classifications of evolutionary and organism histories.
+        Explaining the biodiversity of the planet and its organisms. The systematic study is that of conservation.
+        Manipulating and controlling the natural world. This includes the practice of 'biological control', the intentional introduction of natural predators and disease.[1]</p>
+    <p>Global biodiversity is the measure of biodiversity on planet Earth and is defined as the total variability of life forms. More than 99 percent of all species[1] that ever lived on Earth are estimated to be extinct.[2][3] Estimates on the number of Earth's current species range from 2 million to 1 trillion, but most estimates are around 11 million species or fewer.[4] About 1.74 million species were databased as of 2018,[5] and over 80 percent have not yet been described.[6] The total amount of DNA base pairs on Earth, as a possible approximation of global biodiversity, is estimated at 5.0 x 1037, and weighs 50 billion tonnes.[7] In comparison, the total mass of the biosphere has been estimated to be as much as 4 TtC (trillion tons of carbon).[8]
+
+        In other related studies, around 1.9 million extant species are believed to have been described currently,[9] but some scientists believe 20% are synonyms, reducing the total valid described species to 1.5 million. In 2013, a study published in Science estimated there to be 5 ± 3 million extant species on Earth although that is disputed.[10] Another study, published in 2011 by PLoS Biology, estimated there to be 8.7 million ± 1.3 million eukaryotic species on Earth.[11] Some 250,000 valid fossil species have been described, but this is believed to be a small proportion of all species that have ever lived.[12]
+        
+        Global biodiversity is affected by extinction and speciation. The background extinction rate varies among taxa but it is estimated that there is approximately one extinction per million species years. Mammal species, for example, typically persist for 1 million years. Biodiversity has grown and shrunk in earth's past due to (presumably) abiotic factors such as extinction events caused by geologically rapid changes in climate. Climate change 299 million years ago was one such event. A cooling and drying resulted in catastrophic rainforest collapse and subsequently a great loss of diversity, especially of amphibians. Chapman, 2005 and 2009[9] has attempted to compile perhaps the most comprehensive recent statistics on numbers of extant species, drawing on a range of published and unpublished sources, and has come up with a figure of approximately 1.9 million estimated described taxa, as against possibly a total of between 11 and 12 million anticipated species overall (described plus undescribed), though other reported values for the latter vary widely. In many cases, the values given for "Described" species are an estimate only (sometimes a mean of reported figures in the literature) since for many of the larger groups in particular, comprehensive lists of valid species names do not currently exist. For fossil species, exact or even approximate numbers are harder to find; Raup, 1986[15] includes data based on a compilation of 250,000 fossil species so the true number is undoubtedly somewhat higher than this. The number of described species is increasing by around 18,000–19,000 extant, and approaching 2,000 fossil species each year, as of 2012.[16][17][18] The number of published species names is higher than the number of described species, sometimes considerably so, on account of the publication, through time, of multiple names (synonyms) for the same accepted taxon in many cases. </p>
+    <p>Humans (Homo sapiens) or modern humans are the most common and widespread species of primate, and the last surviving species of the genus Homo. They are great apes characterized by their hairlessness, bipedalism, and high intelligence. Humans have large brains, enabling more advanced cognitive skills that enable them to thrive and adapt in varied environments, develop highly complex tools, and form complex social structures and civilizations. Humans are highly social, with individual humans tending to belong to a multi-layered network of distinct social groups – from families and peer groups to corporations and political states. As such, social interactions between humans have established a wide variety of values, social norms, languages, and traditions (collectively termed institutions), each of which bolsters human society. Humans are also highly curious: the desire to understand and influence phenomena has motivated humanity's development of science, technology, philosophy, mythology, religion, and other frameworks of knowledge; humans also study themselves through such domains as anthropology, social science, history, psychology, and medicine. As of 2025, there are estimated to be more than 8 billion humans alive.
+
+        For most of their history, humans were nomadic hunter-gatherers. Humans began exhibiting behavioral modernity about 160,000–60,000 years ago. The Neolithic Revolution, which began in Southwest Asia around 13,000 years ago (and separately in a few other places), saw the emergence of agriculture and permanent human settlement; in turn, this led to the development of civilization and kickstarted a period of continuous (and ongoing) population growth and rapid technological change. Since then, a number of civilizations have risen and fallen, while a number of sociocultural and technological developments have resulted in significant changes to the human lifestyle.
+        
+        Although some scientists equate the term "humans" with all members of the genus Homo, in common usage it generally refers to Homo sapiens, the only extant member. All other members of the genus Homo, which are now extinct, are known as archaic humans, and the term "modern human" is used to distinguish Homo sapiens from archaic humans. Anatomically modern humans emerged around 300,000 years ago in Africa, evolving from Homo heidelbergensis or a similar species. Migrating out of Africa, they gradually replaced and interbred with local populations of archaic humans. Multiple hypotheses for the extinction of archaic human species such as Neanderthals include competition, violence, interbreeding with Homo sapiens, or inability to adapt to climate change. Genes and the environment influence human biological variation in visible characteristics, physiology, disease susceptibility, mental abilities, body size, and life span. Though humans vary in many traits (such as genetic predispositions and physical features), humans are among the least genetically diverse primates. Any two humans are at least 99% genetically similar. Humans are sexually dimorphic: generally, males have greater body strength and females have a higher body fat percentage. At puberty, humans develop secondary sex characteristics. Females are capable of pregnancy, usually between puberty, at around 12 years old, and menopause, around the age of 50.
+        
+        Humans are omnivorous, capable of consuming a wide variety of plant and animal material, and have used fire and other forms of heat to prepare and cook food since the time of Homo erectus. Humans have had a dramatic effect on the environment. They are apex predators, being rarely preyed upon by other species.[1] Human population growth, industrialization, land development, overconsumption and combustion of fossil fuels have led to environmental destruction and pollution that significantly contributes to the ongoing mass extinction of other forms of life.[2][3] Within the last century, humans have explored challenging environments such as Antarctica, the deep sea, and outer space, though human habitation in these environments is typically limited in duration and restricted to scientific, military, or industrial expeditions. Humans have visited the Moon and sent human-made spacecraft to other celestial bodies. Humans can survive for up to eight weeks without food and several days without water. Humans are generally diurnal, sleeping on average seven to nine hours per day. Childbirth is dangerous, with a high risk of complications and death. Often, both the mother and the father provide care for their children, who are helpless at birth.
+        
+        Etymology and definition
+        Further information: Names for the human species and Human taxonomy
+        
+        Carl Linnaeus coined the name Homo sapiens
+        All modern humans are classified into the species Homo sapiens, coined by Carl Linnaeus in his 1735 work Systema Naturae.[4] The generic name Homo is a learned 18th-century derivation from Latin homō, which refers to humans of either sex.[5][6] The word human can refer to all members of the Homo genus.[7] The name Homo sapiens means 'wise man' or 'knowledgeable man'.[8] There is disagreement if certain extinct members of the genus, namely Neanderthals, should be included as a separate species of humans or as a subspecies of H. sapiens.[7]
+        
+        Human is a loanword of Middle English from Old French humain, ultimately from Latin hūmānus, the adjectival form of homō ('man' – in the sense of humanity).[9] The native English term man can refer to the species generally (a synonym for humanity) as well as to human males. It may also refer to individuals of either sex.[10]
+        
+        Despite the fact that the word animal is colloquially used as an antonym for human,[11] and contrary to a common biological misconception, humans are animals.[12] The word person is often used interchangeably with human, but philosophical debate exists as to whether personhood applies to all humans or all sentient beings, and further if a human can lose personhood (such as by going into a persistent vegetative state).[13]
+        Humans are apes (superfamily Hominoidea).[14] The lineage of apes that eventually gave rise to humans first split from gibbons (family Hylobatidae), next orangutans (genus Pongo), then gorillas (genus Gorilla), and finally, chimpanzees and bonobos (genus Pan). The last split, between the human and chimpanzee–bonobo lineages, took place around 8–4 million years ago, in the late Miocene epoch.[15][16] During this split, chromosome 2 was formed from the joining of two other chromosomes, leaving humans with only 23 pairs of chromosomes, compared to 24 for the other apes.[17] Following their split with chimpanzees and bonobos, the hominins diversified into many species and at least two distinct genera. All but one of these lineages – representing the genus Homo and its sole extant species Homo sapiens – are now extinct.[18]
+
+
+Reconstruction of Lucy, the first Australopithecus afarensis skeleton found
+The genus Homo evolved from Australopithecus.[19][20] Though fossils from the transition are scarce, the earliest members of Homo share several key traits with Australopithecus.[21][22] The earliest record of Homo is the 2.8 million-year-old specimen LD 350-1 from Ethiopia, and the earliest named species are Homo habilis and Homo rudolfensis which evolved by 2.3 million years ago.[22] H. erectus (the African variant is sometimes called H. ergaster) evolved 2 million years ago and was the first archaic human species to leave Africa and disperse across Eurasia.[23] H. erectus also was the first to evolve a characteristically human body plan. Homo sapiens emerged in Africa around 300,000 years ago from a species commonly designated as either H. heidelbergensis or H. rhodesiensis, the descendants of H. erectus that remained in Africa.[24] H. sapiens migrated out of the continent, gradually replacing or interbreeding with local populations of archaic humans.[25][26][27] Humans began exhibiting behavioral modernity about 160,000–70,000 years ago,[28] and possibly earlier.[29] This development was likely selected amidst natural climate change in Middle to Late Pleistocene Africa.[30]
+
+The "out of Africa" migration took place in at least two waves, the first around 130,000 to 100,000 years ago, the second (Southern Dispersal) around 70,000 to 50,000 years ago.[31][32] H. sapiens proceeded to colonize all the continents and larger islands, arriving in Eurasia 125,000 years ago,[33][34] Australia around 65,000 years ago,[35] the Americas around 15,000 years ago, and remote islands such as Hawaii, Easter Island, Madagascar, and New Zealand in the years 300 to 1280 CE.[36][37]
+
+Human evolution was not a simple linear or branched progression but involved interbreeding between related species.[38][39][40] Genomic research has shown that hybridization between substantially diverged lineages was common in human evolution.[41] DNA evidence suggests that several genes of Neanderthal origin are present among all non sub-Saharan-African populations, and Neanderthals and other hominins, such as Denisovans, may have contributed up to 6% of their genome to present-day non sub-Saharan-African humans.[38][42][43]
+
+Human evolution is characterized by a number of morphological, developmental, physiological, and behavioral changes that have taken place since the split between the last common ancestor of humans and chimpanzees. The most significant of these adaptations are hairlessness,[44] obligate bipedalism, increased brain size and decreased sexual dimorphism (neoteny). The relationship between all these changes is the subject of ongoing debate.[45]
+        </p>
+    <p>Birds are a group of warm-blooded vertebrates constituting the class Aves (Latin: [ˈaveːs]), characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. Birds live worldwide and range in size from the 5.5 cm (2.2 in) bee hummingbird to the 2.8 m (9 ft 2 in) common ostrich. There are over 11,000 living species and they are split into 44 orders. More than half are passerine or "perching" birds. Birds have wings whose development varies according to species; the only known groups without wings are the extinct moa and elephant birds. Wings, which are modified forelimbs, gave birds the ability to fly, although further evolution has led to the loss of flight in some birds, including ratites, penguins, and diverse endemic island species. The digestive and respiratory systems of birds are also uniquely adapted for flight. Some bird species of aquatic environments, particularly seabirds and some waterbirds, have further evolved for swimming. The study of birds is called ornithology.
+
+        Birds are feathered theropod dinosaurs and constitute the only known living dinosaurs. Likewise, birds are considered reptiles in the modern cladistic sense of the term, and their closest living relatives are the crocodilians. Birds are descendants of the primitive avialans (whose members include Archaeopteryx) which first appeared during the Late Jurassic. According to some estimates, modern birds (Neornithes) evolved in the Late Cretaceous or between the Early and Late Cretaceous (100 Ma) and diversified dramatically around the time of the Cretaceous–Paleogene extinction event 66 million years ago, which killed off the pterosaurs and all non-ornithuran dinosaurs.[4][5]
+        
+        Many social species preserve knowledge across generations (culture). Birds are social, communicating with visual signals, calls, and songs, and participating in such behaviour as cooperative breeding and hunting, flocking, and mobbing of predators. The vast majority of bird species are socially (but not necessarily sexually) monogamous, usually for one breeding season at a time, sometimes for years, and rarely for life. Other species have breeding systems that are polygynous (one male with many females) or, rarely, polyandrous (one female with many males). Birds produce offspring by laying eggs which are fertilised through sexual reproduction. They are usually laid in a nest and incubated by the parents. Most birds have an extended period of parental care after hatching.
+        
+        Many species of birds are economically important as food for human consumption and raw material in manufacturing, with domesticated and undomesticated birds being important sources of eggs, meat, and feathers. Songbirds, parrots, and other species are popular as pets. Guano (bird excrement) is harvested for use as a fertiliser. Birds figure throughout human culture. About 120 to 130 species have become extinct due to human activity since the 17th century, and hundreds more before then. Human activity threatens about 1,200 bird species with extinction, though efforts are underway to protect them. Recreational birdwatching is an important part of the ecotourism industry.
+        
+        Evolution and classification
+        Main article: Evolution of birds
+        Slab of stone with fossil bones and feather impressions
+        Archaeopteryx is often considered the oldest known true bird.
+        The first classification of birds was developed by Francis Willughby and John Ray in their 1676 volume Ornithologiae.[6] Carl Linnaeus modified that work in 1758 to devise the taxonomic classification system currently in use.[7] Birds are categorised as the biological class Aves in Linnaean taxonomy. Phylogenetic taxonomy places Aves in the clade Theropoda as an infraclass[8] or more recently a subclass[9] or class.
+        
+        Definition
+        Aves and a sister group, the order Crocodilia, contain the only living representatives of the reptile clade Archosauria. During the late 1990s, Aves was most commonly defined phylogenetically as all descendants of the most recent common ancestor of modern birds and Archaeopteryx lithographica.[10] However, an earlier definition proposed by Jacques Gauthier gained wide currency in the 21st century, and is used by many scientists including adherents to the PhyloCode. Gauthier defined Aves to include only the crown group of the set of modern birds. This was done by excluding most groups known only from fossils, and assigning them, instead, to the broader group Avialae,[11] on the principle that a clade based on extant species should be limited to those extant species and their closest extinct relatives.[11]
+        
+        Gauthier and de Queiroz identified four different definitions for the same biological name "Aves", which is a problem.[12] The authors proposed to reserve the term Aves only for the crown group consisting of the last common ancestor of all living birds and all of its descendants,[12] which corresponds to meaning number 4 below. They assigned other names to the other groups.[12]</p>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 7.09.17 PM.png" alt="Mammal 1" class="gallery-image" data-name="whats the image?">
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 7.59.43 PM.png" alt="Mammal 2" class="gallery-image" data-name="Mammal 2">
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.12.54 PM.png" alt="Mammal 3" class="gallery-image" data-name="Mammal 3">
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.12.54 PM.png" alt="Mammal 4" class="gallery-image" data-name="Mammal 4">
+        <img src="image5.jpg" alt="Mammal 5" class="gallery-image" data-name="Mammal 5">
+    </div>
+
+    <h2>Press the gift box to learn more about mammals!</h2>
+    <div>
+        <button class="gift-box" data-name="Systematic Biology" onclick="showInfo(1)">🎁</button>
+        <button class="gift-box" data-name="Lions" onclick="showInfo(2)">🎁</button>
+        <button class="gift-box" data-name="Gift Box 3" onclick="showInfo(3)">🎁</button>
+        <button class="gift-box" data-name="Gift Box 4" onclick="showInfo(4)">🎁</button>
+        <button class="gift-box" data-name="Gift Box 5" onclick="showInfo(5)">🎁</button>
+    </div>
+    
+
+<div id="info1" class="info" style="display: none;">
+    <p>In 1970 Michener et al. defined "systematic biology" and "taxonomy" (terms that are often confused and used interchangeably) in relationship to one another as follows:[3]
+
+        Systematic biology (hereafter called simply systematics) is the field that (a) provides scientific names for organisms, (b) describes them, (c) preserves collections of them, (d) provides classifications for the organisms, keys for their identification, and data on their distributions, (e) investigates their evolutionary histories, and (f) considers their environmental adaptations. This is a field with a long history that in recent years has experienced a notable renaissance, principally with respect to theoretical content. Part of the theoretical material has to do with evolutionary areas (topics e and f above), the rest relates especially to the problem of classification. Taxonomy is that part of Systematics concerned with topics (a) to (d) above.
+        
+        The term "taxonomy" was coined by Augustin Pyramus de Candolle[4] while the term "systematic" was coined by Carl Linnaeus the father of taxonomy.[citation needed]
+        
+        Taxonomy, systematic biology, systematics, biosystematics, scientific classification, biological classification, phylogenetics: At various times in history, all these words have had overlapping, related meanings. However, in modern usage, they can all be considered synonyms of each other.
+        
+        For example, Webster's 9th New Collegiate Dictionary of 1987 treats "classification", "taxonomy", and "systematics" as synonyms. According to this work, the terms originated in 1790, c. 1828, and in 1888 respectively. Some[who?] claim systematics alone deals specifically with relationships through time, and that it can be synonymous with phylogenetics, broadly dealing with the inferred hierarchy[citation needed] of organisms. This means it would be a subset of taxonomy as it is sometimes regarded, but the inverse is claimed by others.[who?]
+        
+        Europeans tend to use the terms "systematics" and "biosystematics" for the study of biodiversity as a whole, whereas North Americans tend to use "taxonomy" more frequently.[5] However, taxonomy, and in particular alpha taxonomy, is more specifically the identification, description, and naming (i.e. nomenclature) of organisms,[6] while "classification" focuses on placing organisms within hierarchical groups that show their relationships to other organisms. All of these biological disciplines can deal with both extinct and extant organisms.
+        
+        Systematics uses taxonomy as a primary tool in understanding, as nothing about an organism's relationships with other living things can be understood without it first being properly studied and described in sufficient detail to identify and classify it correctly.[citation needed] Scientific classifications are aids in recording and reporting information to other scientists and to laymen. The systematist, a scientist who specializes in systematics, must, therefore, be able to use existing classification systems, or at least know them well enough to skilfully justify not using them.
+        
+        Phenetics was an attempt to determine the relationships of organisms through a measure of overall similarity, making no distinction between plesiomorphies (shared ancestral traits) and apomorphies (derived traits). From the late-20th century onwards, it was superseded by cladistics, which rejects plesiomorphies in attempting to resolve the phylogeny of Earth's various organisms through time. Today's systematists generally make extensive use of molecular biology and of computer programs to study organisms.[citation needed]</p>
+    <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.12.54 PM.png" alt="Classification in Biology">
+</div>
+<div id="info2" class="info" style="display: none;">
+    <p>The lion (Panthera leo) is a large cat of the genus Panthera, native to Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a dark, hairy tuft at the tip of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane. It is a social species, forming groups called prides. A lion's pride consists of a few adult males, related females, and cubs. Groups of female lions usually hunt together, preying mostly on medium-sized and large ungulates. The lion is an apex and keystone predator.
+
+        The lion inhabits grasslands, savannahs, and shrublands. It is usually more diurnal than other wild cats, but when persecuted, it adapts to being active at night and at twilight. During the Neolithic period, the lion ranged throughout Africa and Eurasia, from Southeast Europe to India, but it has been reduced to fragmented populations in sub-Saharan Africa and one population in western India. It has been listed as Vulnerable on the IUCN Red List since 1996 because populations in African countries have declined by about 43% since the early 1990s. Lion populations are untenable outside designated protected areas. Although the cause of the decline is not fully understood, habitat loss and conflicts with humans are the greatest causes for concern.
+        
+        One of the most widely recognised animal symbols in human culture, the lion has been extensively depicted in sculptures and paintings, on national flags, and in literature and films. Lions have been kept in menageries since the time of the Roman Empire and have been a key species sought for exhibition in zoological gardens across the world since the late 18th century. Cultural depictions of lions were prominent in Ancient Egypt, and depictions have occurred in virtually all ancient and medieval cultures in the lion's historic and current range.
+        
+        Etymology
+        The English word lion is derived via Anglo-Norman liun from Latin leōnem (nominative: leō), which in turn was a borrowing from Ancient Greek λέων léōn. The Hebrew word לָבִיא lavi may also be related.[4] The generic name Panthera is traceable to the classical Latin word 'panthēra' and the ancient Greek word πάνθηρ 'panther'.[5]
+        
+        Taxonomy
+        
+        The upper cladogram is based on the 2006 study,[6][7] the lower one on the 2010[8] and 2011[9] studies.
+        Felis leo was the scientific name used by Carl Linnaeus in 1758, who described the lion in his work Systema Naturae.[3] The genus name Panthera was coined by Lorenz Oken in 1816.[10] Between the mid-18th and mid-20th centuries, 26 lion specimens were described and proposed as subspecies, of which 11 were recognised as valid in 2005.[1] They were distinguished mostly by the size and colour of their manes and skins.[11]
+        
+        </p>
+    <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.42.18 PM.png" alt="Lioness, sitting">
+</div>
+<div id="info3" class="info" style="display: none;">
+    <p>Most aspects of human physiology are closely homologous to corresponding aspects of animal physiology. The dental formula of humans is: 
+        2.1.2.3
+        2.1.2.3
+        . Humans have proportionately shorter palates and much smaller teeth than other primates. They are the only primates to have short, relatively flush canine teeth. Humans have characteristically crowded teeth, with gaps from lost teeth usually closing up quickly in young individuals. Humans are gradually losing their third molars, with some individuals having them congenitally absent.[150]
+        
+        Humans share with chimpanzees a vestigial tail,[151] appendix, flexible shoulder joints, grasping fingers and opposable thumbs.[152] Humans also have a more barrel-shaped chests in contrast to the funnel shape of other apes, an adaptation for bipedal respiration.[153] Apart from bipedalism and brain size, humans differ from chimpanzees mostly in smelling, hearing and digesting proteins.[154] While humans have a density of hair follicles comparable to other apes, it is predominantly vellus hair, most of which is so short and wispy as to be practically invisible.[155][156] Humans have about 2 million sweat glands spread over their entire bodies, many more than chimpanzees, whose sweat glands are scarce and are mainly located on the palm of the hand and on the soles of the feet.[157]
+        
+        It is estimated that the worldwide average height for an adult human male is about 171 cm (5 ft 7 in), while the worldwide average height for adult human females is about 159 cm (5 ft 3 in).[158] Shrinkage of stature may begin in middle age in some individuals but tends to be typical in the extremely aged.[159] Throughout history, human populations have universally become taller, probably as a consequence of better nutrition, healthcare, and living conditions.[160] The average mass of an adult human is 59 kg (130 lb) for females and 77 kg (170 lb) for males.[161][162] Like many other conditions, body weight and body type are influenced by both genetic susceptibility and environment and varies greatly among individuals.[163][164]
+        
+        Humans have a far faster and more accurate throw than other animals.[165] Humans are also among the best long-distance runners in the animal kingdom, but slower over short distances.[166][154] Humans' thinner body hair and more productive sweat glands help avoid heat exhaustion while running for long distances.[167] Compared to other apes, the human heart produces greater stroke volume and cardiac output and the aorta is proportionately larger.[168][169]
+        
+        Genetics
+        Main article: Human genetics
+        
+        A graphical representation of the standard human karyotype, including both the female (XX) and male (XY) sex chromosomes.
+        Like most animals, humans are a diploid and eukaryotic species. Each somatic cell has two sets of 23 chromosomes, each set received from one parent; gametes have only one set of chromosomes, which is a mixture of the two parental sets. Among the 23 pairs of chromosomes, there are 22 pairs of autosomes and one pair of sex chromosomes. Like other mammals, humans have an XY sex-determination system, so that females have the sex chromosomes XX and males have XY.[170] Genes and environment influence human biological variation in visible characteristics, physiology, disease susceptibility and mental abilities. The exact influence of genes and environment on certain traits is not well understood.[171][172]
+        
+        While no humans – not even monozygotic twins – are genetically identical,[173] two humans on average will have a genetic similarity of 99.5%-99.9%.[174][175] This makes them more homogeneous than other great apes, including chimpanzees.[176][177] This small variation in human DNA compared to many other species suggests a population bottleneck during the Late Pleistocene (around 100,000 years ago), in which the human population was reduced to a small number of breeding pairs.[178][179] The forces of natural selection have continued to operate on human populations, with evidence that certain regions of the genome display directional selection in the past 15,000 years.[180]
+        
+        The human genome was first sequenced in 2001[181] and by 2020 hundreds of thousands of genomes had been sequenced.[182] In 2012 the International HapMap Project had compared the genomes of 1,184 individuals from 11 populations and identified 1.6 million single nucleotide polymorphisms.[183] African populations harbor the highest number of private genetic variants. While many of the common variants found in populations outside of Africa are also found on the African continent, there are still large numbers that are private to these regions, especially Oceania and the Americas.[184] By 2010 estimates, humans have approximately 22,000 genes.[185] By comparing mitochondrial DNA, which is inherited only from the mother, geneticists have concluded that the last female common ancestor whose genetic marker is found in all modern humans, the so-called mitochondrial Eve, must have lived around 90,000 to 200,000 years ago.[186][187][188][189]
+        
+        Life cycle
+        See also: Childbirth and Life expectancy
+        
+        A 10 mm human embryo at 5 weeks
+        Most human reproduction takes place by internal fertilization via sexual intercourse, but can also occur through assisted reproductive technology procedures.[190] The average gestation period is 38 weeks, but a normal pregnancy can vary by up to 37 days.[191] Embryonic development in the human covers the first eight weeks of development; at the beginning of the ninth week the embryo is termed a fetus.[192] Humans are able to induce early labor or perform a caesarean section if the child needs to be born earlier for medical reasons.[193] In developed countries, infants are typically 3–4 kg (7–9 lb) in weight and 47–53 cm (19–21 in) in height at birth.[194][195] However, low birth weight is common in developing countries, and contributes to the high levels of infant mortality in these regions.[196]
+        
+        Compared with other species, human childbirth is dangerous, with a much higher risk of complications and death.[197] The size of the fetus's head is more closely matched to the pelvis than in other primates.[198] The reason for this is not completely understood,[n 3] but it contributes to a painful labor that can last 24 hours or more.[200] The chances of a successful labor increased significantly during the 20th century in wealthier countries with the advent of new medical technologies. In contrast, pregnancy and natural childbirth remain hazardous ordeals in developing regions of the world, with maternal death rates approximately 100 times greater than in developed countries.[201]
+        
+        Both the mother and the father provide care for human offspring, in contrast to other primates, where parental care is mostly done by the mother.[202] Helpless at birth, humans continue to grow for some years, typically reaching sexual maturity at 15 to 17 years of age.[203][204][205] The human life span has been split into various stages ranging from three to twelve. Common stages include infancy, childhood, adolescence, adulthood and old age.[206] The lengths of these stages have varied across cultures and time periods but is typified by an unusually rapid growth spurt during adolescence.[207] Human females undergo menopause and become infertile at around the age of 50.[208] It has been proposed that menopause increases a woman's overall reproductive success by allowing her to invest more time and resources in her existing offspring, and in turn their children (the grandmother hypothesis), rather than by continuing to bear children into old age.[209][210]
+        
+        The life span of an individual depends on two major factors, genetics and lifestyle choices.[211] For various reasons, including biological/genetic causes, women live on average about four years longer than men.[212] As of 2018, the global average life expectancy at birth of a girl is estimated to be 74.9 years compared to 70.4 for a boy.[213][214] There are significant geographical variations in human life expectancy, mostly correlated with economic development – for example, life expectancy at birth in Hong Kong is 87.6 years for girls and 81.8 for boys, while in the Central African Republic, it is 55.0 years for girls and 50.6 for boys.[215][216] The developed world is generally aging, with the median age around 40 years. In the developing world, the median age is between 15 and 20 years. While one in five Europeans is 60 years of age or older, only one in twenty Africans is 60 years of age or older.[217] In 2012, the United Nations estimated that there were 316,600 living centenarians (humans of age 100 or older) worldwide.</p>
+    <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.42.18 PM.png" alt="Mammal 3">
+</div>
+<div id="info4" class="info" style="display: none;">
+    <p>Mammals nurse their young with milk.</p>
+    <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 7.20.03 PM.png" alt="Mammal 4">
+</div>
+<div id="info5" class="info" style="display: none;">
+    <p>Mammals have a complex brain.</p>
+    <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.33.35 PM.png" alt="Mammal 5">
+</div>
+
+<h2>Interactive Map</h2>
+<div class="map">
+    <div class="stop" style="top: 50px; left: 50px;" data-question="Lizards are mammals, true or false?">
+        <div class="question">
+            <p>Lizards are mammals, true or false?</p>
+            <button onclick="checkAnswer(this, true)">true</button>
+            <button onclick="checkAnswer(this, false)">false</button>
+        </div>
+    </div>
+    <div class="stop" style="top: 150px; left: 150px;" data-question="Does it have fur?">
+        <div class="question">
+            <p>Does it have fur?</p>
+            <button onclick="checkAnswer(this, true)">Yes</button>
+            <button onclick="checkAnswer(this, false)">No</button>
+        </div>
+    </div>
+    <div class="stop" style="top: 250px; left: 250px;" data-question="Does it give birth to live young?">
+        <div class="question">
+            <p>Does it give birth to live young?</p>
+            <button onclick="checkAnswer(this, true)">Yes</button>
+            <button onclick="checkAnswer(this, false)">No</button>
+        </div>
+    </div>
+    <div class="stop" style="top: 350px; left: 350px;" data-question="Does it have a backbone?">
+        <div class="question">
+            <p>Does it have a backbone?</p>
+            <button onclick="checkAnswer(this, true)">Yes</button>
+            <button onclick="checkAnswer(this, false)">No</button>
+        </div>
+    </div>
+    <div class="stop" style="top: 450px; left: 450px;" data-question="Is it warm-blooded?">
+        <div class="question">
+            <p>Is it warm-blooded?</p>
+            <button onclick="checkAnswer(this, true)">Yes</button>
+            <button onclick="checkAnswer(this, false)">No</button>
+        </div>
+    </div>
+
+
+<script>
+function showInfo(infoNumber) {
+    const infoDiv = document.getElementById(`info${infoNumber}`);
+    if (infoDiv.style.display === "none") {
+        infoDiv.style.display = "block";
+    } else {
+        infoDiv.style.display = "none";
+    }
+}
+
+document.querySelectorAll('.gallery-image').forEach(image => {
+    image.addEventListener('click', () => {
+        alert(image.getAttribute('data-name'));
+    });
+});
+    </script>
+</body>
+</html>

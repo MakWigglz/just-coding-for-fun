@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+</head>
+<body>
+    <div id="info1" class="info">
+        <p>Recognised as valid in 2005. They were distinguished mostly by the size and colour of their manes and skins.</p>
+        <img src="MammalsModule/Screen%20Shot%202025-02-17%20at%209.42.18%20PM.png" alt="Lioness, sitting">
+    </div>
+    <div id="info3" class="info" style="display: none;">
+        <p>Mammals have a backbone.</p>
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 7.59.43 PM.png" alt="Mammal 3">
+    </div>
+    <div id="info4" class="info" style="display: none;">
+        <p>Mammals nurse their young with milk.</p>
+        <img src="/Users/amakki/Documents/Coding-Design/GitHub/scienceHTMLforKids/MammalsModule/Screen Shot 2025-02-17 at 9.33.35 PM.png" alt="Mammal 4">
+    </div>
+    <div id="info5" class="info" style="display: none;">
+        <p>Mammals have a complex brain.</p>
+        <img src="MammalsModule/path/to/image5.jpg" alt="Mammal 5">
+    </div>
+
+    <h2>Interactive Map</h2>
+    <div class="map">
+        <div class="stop" style="top: 50px; left: 50px;" data-question="Lizards are mammals, true or false?">
+            <div class="question">
+                <p>Lizards are mammals, true or false?</p>
+                <button onclick="checkAnswer(this, true)">true</button>
+                <button onclick="checkAnswer(this, false)">false</button>
+            </div>
+        </div>
+        <div class="stop" style="top: 150px; left: 150px;" data-question="Does it have fur?">
+            <div class="question">
+                <p>Does it have fur?</p>
+                <button onclick="checkAnswer(this, true)">Yes</button>
+                <button onclick="checkAnswer(this, false)">No</button>
+            </div>
+        </div>
+        <div class="stop" style="top: 250px; left: 250px;" data-question="Does it give birth to live young?">
+            <div class="question">
+                <p>Does it give birth to live young?</p>
+                <button onclick="checkAnswer(this, true)">Yes</button>
+                <button onclick="checkAnswer(this, false)">No</button>
+            </div>
+        </div>
+        <div class="stop" style="top: 350px; left: 350px;" data-question="Does it have a backbone?">
+            <div class="question">
+                <p>Does it have a backbone?</p>
+                <button onclick="checkAnswer(this, true)">Yes</button>
+                <button onclick="checkAnswer(this, false)">No</button>
+            </div>
+        </div>
+        <div class="stop" style="top: 450px; left: 450px;" data-question="Is it warm-blooded?">
+            <div class="question">
+                <p>Is it warm-blooded?</p>
+                <button onclick="checkAnswer(this, true)">Yes</button>
+                <button onclick="checkAnswer(this, false)">No</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
