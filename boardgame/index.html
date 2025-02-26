@@ -2,122 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Science Explorer for Kids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Board Game</title>
   <style>
-    /* Styles for the app */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f8ff;
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      gap: 2px;
+    }
+    .square {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      justify-content: center;
     }
-
-    #card {
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 600px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    #card h1 {
-      font-size: 2em;
-      color: #2c3e50;
-    }
-
-    #card p {
-      font-size: 1.2em;
-      color: #34495e;
-    }
-
-    #nextButton {
-      margin-top: 20px;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background-color: #3498db;
-      color: #ffffff;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-    }
-
-    #nextButton:hover {
-      background-color: #2980b9;
+    .token {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      border-radius: 50%;
     }
   </style>
 </head>
 <body>
 
-  <div id="card">
-    <h1 id="title">Welcome to Science Explorer!</h1>
-    <p id="content">Tap the button to learn something new about our amazing world!</p>
-    <button id="nextButton">Let's Go!</button>
-  </div>
+<div class="board" id="board"></div>
+<button id="rollDice">Roll Dice</button>
+<h2 id="title"></h2>
+<p id="content"></p>
 
-  <script>
-    // JavaScript code for interactivity
-    const topics = [
-      {
-        title: "The Sun",
-        content: "The sun is a big ball of fire in the sky. It keeps us warm and gives light to the Earth. Without the sun, we wouldn't have day and night!"
-      },
-      {
-        title: "Rainbows",
-        content: "Rainbows have seven beautiful colors. They appear in the sky when the sun shines after it rains. Can you name all the colors of the rainbow?"
-      },
-      {
-        title: "Plants and Trees",
-        content: "Plants and trees help us breathe. They take in bad air and give us fresh oxygen. Remember to water your plants to help them grow!"
-      },
-      {
-        title: "The Moon",
-        content: "The moon comes out at night. Sometimes it's a full circle, and sometimes it's just a tiny slice. It's like a night light in the sky!"
-      },
-      {
-        title: "Ocean Life",
-        content: "The ocean is home to many creatures like fish, dolphins, and whales. It's a big, watery world full of wonders!"
-      },
-      {
-        title: "Butterflies",
-        content: "Butterflies start as caterpillars. They wrap themselves in a cocoon and come out as beautiful butterflies. They love flowers just like you!"
-      },
-      {
-        title: "Stars",
-        content: "Stars twinkle in the night sky. They're like tiny lights far, far away. If you look closely, you might see a shooting star!"
-      },
-      {
-        title: "Weather",
-        content: "Weather can be sunny, rainy, cloudy, or snowy. Each type of weather helps plants and animals in different ways."
-      }
-    ];
+<script>
+  const topics = [
+    { title: "Physics", content: "Physics is the study of matter, energy, and the interactions between them." },
+    { title: "Chemistry", content: "Chemistry is the study of substances, their properties, and how they interact." },
+    // Add more topics as needed
+  ];
 
-    let currentTopic = 0;
+  const board = document.getElementById('board');
+  const rollDiceButton = document.getElementById('rollDice');
+  const titleElement = document.getElementById('title');
+  const contentElement = document.getElementById('content');
+  let currentTopic = 0;
+  let currentPosition = 0;
 
-    const titleElement = document.getElementById('title');
-    const contentElement = document.getElementById('content');
-    const nextButton = document.getElementById('nextButton');
+  // Create the board
+  for (let i = 0; i < 64; i++) {
+    const square = document.createElement('div');
+    square.classList.add('square');
+    square.id = `square-${i}`;
+    board.appendChild(square);
+  }
 
-    nextButton.addEventListener('click', () => {
-      if (currentTopic < topics.length) {
-        titleElement.textContent = topics[currentTopic].title;
-        contentElement.textContent = topics[currentTopic].content;
-        nextButton.textContent = "Next";
-        currentTopic++;
-      } else {
-        titleElement.textContent = "Great Job!";
-        contentElement.textContent = "You've learned so much about science today!";
-        nextButton.textContent = "Start Over";
-        currentTopic = 0;
-      }
-    });
-  </script>
+  // Create the token
+  const token = document.createElement('div');
+  token.classList.add('token');
+  document.getElementById('square-0').appendChild(token);
+
+  rollDiceButton.addEventListener('click', () => {
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
+    let newPosition = currentPosition + diceRoll;
+
+    if (newPosition >= 64) {
+      newPosition = 63;
+    }
+
+    document.getElementById(`square-${currentPosition}`).removeChild(token);
+    document.getElementById(`square-${newPosition}`).appendChild(token);
+    currentPosition = newPosition;
+
+    if (currentTopic < topics.length) {
+      titleElement.textContent = topics[currentTopic].title;
+      contentElement.textContent = topics[currentTopic].content;
+      currentTopic++;
+    } else {
+      titleElement.textContent = "Great Job!";
+      contentElement.textContent = "You've learned so much about science today!";
+      currentTopic = 0;
+    }
+  });
+</script>
 
 </body>
 </html>
